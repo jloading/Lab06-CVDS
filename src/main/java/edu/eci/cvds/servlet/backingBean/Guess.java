@@ -14,7 +14,6 @@ public class Guess {
     private int numeroIntentos;
     private int premioAcumulado;
     private String estado;
-    private int intentos;
 
     public Guess() {
         setNumeroAdivinar();
@@ -56,7 +55,7 @@ public class Guess {
     }
 
     public void guess(int intento){
-        intentos += 1;
+        numeroIntentos += 1;
         if(intento == numeroAdivinar){
             setEstado("Adivinó");
         }
@@ -68,7 +67,7 @@ public class Guess {
 
     public void restart(){
         premioAcumulado = 100000;
-        intentos = 0;
+        numeroIntentos = 0;
         setNumeroAdivinar();
         setEstado("No adivinó");
     }
