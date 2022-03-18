@@ -9,13 +9,13 @@
         <br></br>
         <p:outputLabel>Intentos="#{guessBean.getNumeroIntentos()}"</p:outputLabel>
         <br></br>
-        <p:outputLabel>Estado juego ="#{guessBean.getEstado()}"</p:outputLabel>
+        <p:outputLabel>Estado="#{guessBean.getEstado()}"</p:outputLabel>
         <br></br>
-        <p:outputLabel>Premio acumulado="#{guessBean.getPremioAcumulado()}"</p:outputLabel>
+        <p:outputLabel>Premio="#{guessBean.getPremioAcumulado()}"</p:outputLabel>
         <br></br>
-        <p:commandButton update="guess_form" actionListener="#{guessBean.guess(input.value)}"> </p:commandButton>
+        <p:commandButton value="Intentar" update="guess_form" actionListener="#{guessBean.guess(input.value)}"> </p:commandButton>
         <br></br>
-        <p:commandButton update="guess_form" actionListener="#{guessBean.restart()}"> </p:commandButton>
+        <p:commandButton value="Reiniciar" update="guess_form" actionListener="#{guessBean.restart()}"> </p:commandButton>
     </h:form>
 </h:body>
 </html>

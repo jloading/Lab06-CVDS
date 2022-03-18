@@ -11,13 +11,11 @@ import java.util.Random;
 
 public class Guess {
     private int numeroAdivinar;
-    private int numeroIntentos;
-    private int premioAcumulado;
+    private int numeroIntentos = 0;
+    private int premioAcumulado = 100000;
     private String estado;
 
     public Guess() {
-        setNumeroAdivinar();
-
     }
 
     public int getNumeroAdivinar() {
@@ -55,6 +53,7 @@ public class Guess {
     }
 
     public void guess(int intento){
+
         numeroIntentos += 1;
         if(intento == numeroAdivinar){
             setEstado("Adivinó");
