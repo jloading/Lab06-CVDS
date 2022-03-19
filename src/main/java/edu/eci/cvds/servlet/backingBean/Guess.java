@@ -36,7 +36,7 @@ public class Guess {
 
     public void setNumeroAdivinar() {
         Random random = new Random();
-        int x = random.nextInt(10);
+        int x = random.nextInt(11);
         this.numeroAdivinar = x;
     }
 
