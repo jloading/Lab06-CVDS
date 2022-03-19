@@ -58,8 +58,8 @@
         <p:outputLabel>Intentos="#{guessBean.getNumeroIntentos()}"</p:outputLabel>
         <p:outputLabel>Estado="#{guessBean.getEstado()}"</p:outputLabel>
         <p:outputLabel>Premio="#{guessBean.getPremioAcumulado()}"</p:outputLabel>
-                    <button class="btn-primary" value="Guess"  update="GuessBean_form" actionListener="#{guessBean.guess(input.value)}">Guess</button>
-                    <button class="btn-primary" value="Restart" update="GuessBean_form" actionListener="#{guessBean.restart()}">Restart</button>
+                    <button class="btn-primary" value="Guess"  update="guess_form" actionListener="#{guessBean.guess(input.value)}">Guess</button>
+                    <button class="btn-primary" value="Restart" update="guess_form" actionListener="#{guessBean.restart()}">Restart</button>
                 </h:panelGrid>
             </h:form>
         </center>
