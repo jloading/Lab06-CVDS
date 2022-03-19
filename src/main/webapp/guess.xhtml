@@ -57,13 +57,13 @@
 		<center>
 		<h:form id="GuessBean_form" style="margin-bottom:10px;">
 		<h:panelGrid class="myPanelGrid"  style="text-align:center" >
-			<h:outputLabel value="#{GuessBean.getStatus()}"/>
+			<h:outputLabel value="#{Guess.getStatus()}"/>
 			<h:outputLabel value="Number:"/>
 			<h:inputText id="lista" type="text" binding="#{input}" /> 
 			<h:outputLabel value="Score:" />
-			<h:outputLabel value="#{GuessBean.getScore()}" />
-            <button class="btn-primary" value="Restart" update="GuessBean_form" actionListener="#{GuessBean.restart()}">Restart</button>
-            <button class="btn-primary" value="Guess"  update="GuessBean_form" actionListener="#{GuessBean.guess(input.value)}">Guess</button>
+			<h:outputLabel value="#{Guess.getScore()}" />
+            <button class="btn-primary" value="Restart" update="GuessBean_form" actionListener="#{Guess.restart()}">Restart</button>
+            <button class="btn-primary" value="Guess"  update="GuessBean_form" actionListener="#{Guess.guess(input.value)}">Guess</button>
         </h:panelGrid>
         </h:form>
         </center>
