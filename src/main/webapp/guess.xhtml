@@ -43,21 +43,27 @@
     .btn-block { width: 100%; display:block; }
 
 </style>
+<div class="a">
+<h:head>
+    <title>GuessBean</title>
+</h:head>
+    <body background="Fondo.jpg">
 
-<h:head> </h:head>
-<h:body>
-    <h:form id="guess_form">
+    <h:body>
+        <h1 align="center">GuessBean</h1>
+        <center>
+            <h:form id="GuessBean_form" style="margin-bottom:10px;">
+                <h:panelGrid class="myPanelGrid"  style="text-align:center" >
         <p:inputText id = "intento" type="int" binding="#{input}"/>
-        <br></br>
         <p:outputLabel>Intentos="#{guessBean.getNumeroIntentos()}"</p:outputLabel>
-        <br></br>
         <p:outputLabel>Estado="#{guessBean.getEstado()}"</p:outputLabel>
-        <br></br>
         <p:outputLabel>Premio="#{guessBean.getPremioAcumulado()}"</p:outputLabel>
-        <br></br>
-        <p:commandButton value="Intentar" update="guess_form" actionListener="#{guessBean.guess(input.value)}"> </p:commandButton>
-        <br></br>
-        <p:commandButton value="Reiniciar" update="guess_form" actionListener="#{guessBean.restart()}"> </p:commandButton>
-    </h:form>
+                    <button class="btn-primary" value="Guess"  update="GuessBean_form" actionListener="#{guessBean.guess(input.value)}">Guess</button>
+                    <button class="btn-primary" value="Restart" update="GuessBean_form" actionListener="#{guessBean.restart()}">Restart</button>
+                </h:panelGrid>
+            </h:form>
+        </center>
 </h:body>
+    </body>
+</div>
 </html>
