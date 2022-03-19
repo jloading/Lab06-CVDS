@@ -55,11 +55,11 @@
             <h:form id="guess_form" style="margin-bottom:10px;">
                 <h:panelGrid class="myPanelGrid"  style="text-align:center" >
         <p:inputText id = "intento" type="int" binding="#{input}"/>
-        <p:outputLabel>Intentos="#{guessBean.getNumeroIntentos()}"</p:outputLabel>
-        <p:outputLabel>Estado="#{guessBean.getEstado()}"</p:outputLabel>
-        <p:outputLabel>Premio="#{guessBean.getPremioAcumulado()}"</p:outputLabel>
-                    <button class="btn-primary" value="Guess"  update="guess_form" actionListener="#{guessBean.guess(input.value)}">Guess</button>
-                    <button class="btn-primary" value="Restart" update="guess_form" actionListener="#{guessBean.restart()}">Restart</button>
+        <p:outputLabel>Intentos="#{Guess.getNumeroIntentos()}"</p:outputLabel>
+        <p:outputLabel>Estado="#{Guess.getEstado()}"</p:outputLabel>
+        <p:outputLabel>Premio="#{Guess.getPremioAcumulado()}"</p:outputLabel>
+                    <button class="btn-primary" value="Guess"  update="guess_form" actionListener="#{Guess.guess(input.value)}">Guess</button>
+                    <button class="btn-primary" value="Restart" update="guess_form" actionListener="#{Guess.restart()}">Restart</button>
                 </h:panelGrid>
             </h:form>
         </center>
