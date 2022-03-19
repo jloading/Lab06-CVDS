@@ -1,66 +1,77 @@
 package edu.eci.cvds.servlet.backingBean;
 
 import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ManagedBean;
 import java.util.ArrayList;
+import java.util.Random;
 
-@ManagedBean(name = "GuessBean")
+@ManagedBean(name = "guessBean")
 @ApplicationScoped
 
-
 public class GuessBean {
-    int randomNumber = (int) (Math.random()*10)+1;
-    int score = 110000;
-    String status = "Playing";
+    private int numeroAdivinar;
+    private int numeroIntentos = 0;
+    private int premioAcumulado = 100000;
+    private String estado;
 
-    public int getNumber(){
-        return randomNumber;
+    public GuessBean() {
     }
 
-    public String getStatus(){
-        return status;
+    public int getNumeroAdivinar() {
+        return numeroAdivinar;
     }
 
-    public int getRandomNumber(){
-        return randomNumber;
+    public int getNumeroIntentos() {
+        return numeroIntentos;
     }
 
-    public int getScore(){
-        return score;
+    public int getPremioAcumulado() {
+        return premioAcumulado;
     }
 
-    public void setStatus(String newStatus){
-        status = newStatus;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setScore(int newscore){
-        score = newscore;
+    public void setNumeroAdivinar() {
+        Random random = new Random();
+        int x = random.nextInt(10);
+        this.numeroAdivinar = x;
     }
 
-    public void setRandomNumber(int newrandomNumber){
-        randomNumber = newrandomNumber;
+    public void setNumeroIntentos(int numeroIntentos) {
+        this.numeroIntentos = numeroIntentos;
     }
 
-    public String guess(int number){
-        if (number == randomNumber){
-            setStatus("Win");
-            return status;
-        }else if (getScore() - 10000 > 0){
-            setScore(getScore() - 10000);
-            setStatus("Playing");
-            return status;
-        }else{
-            setStatus("Lose");
-            return status;
+    public void setPremioAcumulado(int premioAcumulado) {
+        this.premioAcumulado = premioAcumulado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public void guess(int intento){
+
+        numeroIntentos += 1;
+        if(intento == numeroAdivinar){
+            setEstado("Adivinó");
         }
-
+        else{
+            premioAcumulado -= 10000;
+            setEstado("No adivinó");
+        }
     }
 
     public void restart(){
-        setRandomNumber((int) (Math.random()*9)+1);
-        setScore(110000);
-        setStatus("Playing");
+        premioAcumulado = 100000;
+        numeroIntentos = 0;
+        setNumeroAdivinar();
+        setEstado("No adivinó");
     }
+
+
+
 
 }
