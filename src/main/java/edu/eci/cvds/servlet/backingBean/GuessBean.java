@@ -9,7 +9,7 @@ import java.util.ArrayList;
 @ApplicationScoped
 
 
-public class Guess {
+public class GuessBean {
     int randomNumber = (int) (Math.random()*10)+1;
     int score = 110000;
     String status = "Playing";
