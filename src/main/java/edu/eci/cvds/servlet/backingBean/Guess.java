@@ -11,8 +11,8 @@ import java.util.Random;
 
 public class Guess {
     private int numeroAdivinar;
-    private int numeroIntentos = 0;
-    private int premioAcumulado = 100000;
+    private int numeroIntentos;
+    private int premioAcumulado;
     private String estado;
 
     public Guess() {
