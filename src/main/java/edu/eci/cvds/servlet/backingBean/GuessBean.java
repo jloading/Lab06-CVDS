@@ -9,13 +9,13 @@ import java.util.Random;
 @ManagedBean(name = "guessBean")
 @ApplicationScoped
 
-public class Guess {
+public class GuessBean {
     private int numeroAdivinar;
     private int numeroIntentos = 0;
     private int premioAcumulado = 100000;
     private String estado;
 
-    public Guess() {
+    public GuessBean() {
     }
 
     public int getNumeroAdivinar() {
