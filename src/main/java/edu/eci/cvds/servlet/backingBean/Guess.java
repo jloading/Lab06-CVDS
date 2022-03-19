@@ -16,6 +16,7 @@ public class Guess {
     private String estado;
 
     public Guess() {
+        setNumeroAdivinar();
     }
 
     public int getNumeroAdivinar() {
